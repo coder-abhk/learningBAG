@@ -1,0 +1,26 @@
+@use "./header";
+@use "./mainProduct";
+@use "./books";
+@use "./services";
+@use "./about";
+@use "./footer";
+@use "./basket";
+
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: #ffce31;
+}
+
+body {
+  font-size: 14px;
+  font-family: sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fafafa;
+}

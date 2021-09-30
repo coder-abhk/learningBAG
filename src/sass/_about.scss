@@ -1,0 +1,45 @@
+@import "./variables";
+
+@mixin mobile {
+  @media (max-width: 576px) {
+    @content;
+  }
+}
+
+.about-container {
+  background-color: $whiteColor;
+  padding-top: 5rem;
+  position: relative;
+  @include mobile() {
+    padding-top: 1rem;
+  }
+  .about-svg > .about-svg-img {
+    @include mobile() {
+      width: 200px;
+      padding-top: 2rem;
+    }
+  }
+  .about-content {
+    width: 70%;
+    margin-top: 5rem;
+    margin-left: auto;
+    margin-right: auto;
+    @include mobile() {
+      width: 90%;
+      margin-top: 2rem;
+      text-align: justify;
+    }
+    p {
+      color: $textGrey;
+    }
+    &-info {
+      margin-top: 2rem;
+      padding: 2rem;
+      background-color: $yellowColor;
+      p {
+        margin-top: 1rem;
+        line-height: 1.5rem;
+      }
+    }
+  }
+}
