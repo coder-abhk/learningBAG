@@ -48,7 +48,14 @@ function Books({ dispatch }) {
             </div>
           ))
         ) : (
-          <CircularProgress style={{ color: "#ffce31" }} />
+          <CircularProgress
+            style={{
+              color: "#ffce31",
+              width: "25px",
+              height: "25px",
+              marginTop: "-2rem",
+            }}
+          />
         )}
       </div>
     </section>
