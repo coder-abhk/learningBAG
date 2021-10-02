@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
 
 @mixin mobile {
-  @media (max-width: 576px) {
+  @media (max-width: 786px) {
     @content;
   }
 }
@@ -13,8 +13,11 @@
   align-items: center;
   padding: 1rem;
   margin-top: 2rem;
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
   z-index: 9999;
   @include mobile() {
     margin-top: 0;
@@ -31,7 +34,7 @@
     @include mobile() {
       width: 98%;
       justify-content: center;
-      flex-wrap: wrap;
+      flex-direction: column;
     }
     .brand-logo {
       letter-spacing: 0.12rem;

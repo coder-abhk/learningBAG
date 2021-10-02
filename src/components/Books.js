@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import books from "../data/books";
+import CircularProgress from "@mui/material/CircularProgress";
 import { connect } from "react-redux";
 
 function Books({ dispatch }) {
@@ -19,32 +20,36 @@ function Books({ dispatch }) {
         </h1>
       </header>
       <div className="books-container-items">
-        {allBooks.map((book) => (
-          <div className="books-container-item" key={book._id}>
-            <div className="books-container-item-image">
-              <img src={book.imgSrc} alt="" />
-            </div>
-            <div className="books-container-item-body">
-              <h3>Price Rs. {book.price}</h3>
-              <p>ratings: {book.ratings}/5</p>
-              <div
-                className="purchase-btn"
-                onClick={() => {
-                  dispatch({
-                    type: "ADD",
-                    product: {
-                      id: book._id,
-                      name: book.name,
-                      price: book.price,
-                    },
-                  });
-                }}
-              >
-                ADD TO CART
+        {allBooks.length > 0 ? (
+          allBooks.map((book) => (
+            <div className="books-container-item" key={book._id}>
+              <div className="books-container-item-image">
+                <img src={book.imgSrc} alt="" />
+              </div>
+              <div className="books-container-item-body">
+                <h3>Price Rs. {book.price}</h3>
+                <p>ratings: {book.ratings}/5</p>
+                <div
+                  className="purchase-btn"
+                  onClick={() => {
+                    dispatch({
+                      type: "ADD",
+                      product: {
+                        id: book._id,
+                        name: book.name,
+                        price: book.price,
+                      },
+                    });
+                  }}
+                >
+                  ADD TO CART
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))
+        ) : (
+          <CircularProgress style={{ color: "#ffce31" }} />
+        )}
       </div>
     </section>
   );
