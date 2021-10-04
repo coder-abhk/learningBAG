@@ -14,21 +14,6 @@ function Header({ setIsToggle, isToggle, products }) {
             <Link to="/">home</Link>
           </li>
           <li>
-            <a href="#about" alt="">
-              about
-            </a>
-          </li>
-          <li>
-            <a href="#contact" alt="">
-              contact
-            </a>
-          </li>
-          <li>
-            <a href="#services" alt="">
-              services
-            </a>
-          </li>
-          <li>
             <Link to="/profile">profile</Link>
           </li>
           <li>
