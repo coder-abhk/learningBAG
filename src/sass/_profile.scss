@@ -1,0 +1,75 @@
+@use "./variables" as var;
+
+@mixin mobile {
+  @media (max-width: 576px) {
+    @content;
+  }
+}
+
+.form-container {
+  width: 70%;
+  margin: 10rem auto;
+  @include mobile() {
+    width: 90%;
+  }
+  #form {
+    width: 345px;
+    margin: auto;
+    padding: 1rem;
+    background-color: white;
+    > input {
+      display: block;
+      width: 100%;
+      margin-block: 1rem;
+      padding: 0.5rem;
+      border: none;
+      border-radius: 3px;
+      border: 1px solid var.$yellowColor;
+    }
+    .form-route-btn {
+      padding: 0.5rem;
+      border: none;
+      border-radius: 3px;
+      background-color: var.$yellowColor;
+      border: 1px solid var.$yellowColor;
+      &:hover {
+        cursor: pointer;
+        filter: brightness(105%);
+      }
+    }
+  }
+
+  #form {
+    > input:last-of-type {
+      background-color: var.$yellowColor;
+      &:hover {
+        cursor: pointer;
+        filter: brightness(105%);
+      }
+    }
+  }
+}
+
+.user-container {
+  width: 70%;
+  padding: 1rem;
+  margin: 10rem auto;
+  background-color: white;
+  .details-row {
+    line-height: 1.5rem;
+  }
+  @include mobile() {
+    width: 90%;
+  }
+}
+
+.logout-btn {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 3px;
+  background-color: var.$yellowColor;
+  &:hover {
+    cursor: pointer;
+    filter: brightness(105%);
+  }
+}

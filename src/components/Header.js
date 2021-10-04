@@ -1,5 +1,6 @@
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 function Header({ setIsToggle, isToggle, products }) {
   return (
@@ -9,6 +10,9 @@ function Header({ setIsToggle, isToggle, products }) {
           <h2>LearningBAG</h2>
         </div>
         <ul className="nav-links">
+          <li>
+            <Link to="/">home</Link>
+          </li>
           <li>
             <a href="#about" alt="">
               about
@@ -25,9 +29,7 @@ function Header({ setIsToggle, isToggle, products }) {
             </a>
           </li>
           <li>
-            <a href="/" alt="">
-              profile
-            </a>
+            <Link to="/profile">profile</Link>
           </li>
           <li>
             <a
@@ -35,6 +37,7 @@ function Header({ setIsToggle, isToggle, products }) {
               alt=""
               onClick={(e) => {
                 e.preventDefault();
+                e.stopPropagation();
                 isToggle ? setIsToggle(false) : setIsToggle(true);
               }}
             >
