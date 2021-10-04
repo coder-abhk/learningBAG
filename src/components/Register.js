@@ -78,7 +78,11 @@ function Register({ loginToggle, setLoginToggle }) {
           placeholder="enter a password"
           onChange={onPasswordHandler}
         />
-        <button className="form-route-btn" onClick={loginToggleHandler}>
+        <button
+          className="form-route-btn"
+          type="button"
+          onClick={loginToggleHandler}
+        >
           login ?
         </button>
         <input type="submit" value="register" />
