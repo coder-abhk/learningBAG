@@ -27,6 +27,8 @@ function Register({ loginToggle, setLoginToggle }) {
   }
 
   function onRegisterHandler(e) {
+    e.preventDefault();
+    e.stopPropagation();
     //   submit user at "/register"
     axios
       .post(uri + "/register", {
@@ -45,8 +47,6 @@ function Register({ loginToggle, setLoginToggle }) {
         }
       })
       .catch((err) => console.error(err));
-    e.preventDefault();
-    e.stopPropagation();
   }
   return (
     <div className="form-container">

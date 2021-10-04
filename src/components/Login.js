@@ -22,23 +22,25 @@ function Login({ loginToggle, setLoginToggle }) {
   }
 
   function onLoginHandler(e) {
+    e.preventDefault();
+    e.stopPropagation();
     axios
       .post(uri + "/login", {
         email,
         password,
       })
       .then((res) => {
-        setEmail("");
-        setPassword("");
         if (res.data.isMatched) {
+          setEmail("");
+          setPassword("");
           localStorage.setItem("username", res.data.username);
           localStorage.setItem("email", res.data.email);
           history.push("/profile");
+        } else {
+          alert(res.data.message);
         }
       })
       .catch((err) => console.error(err));
-    e.preventDefault();
-    e.stopPropagation();
   }
   return (
     <div className="form-container">
